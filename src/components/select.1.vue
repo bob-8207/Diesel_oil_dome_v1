@@ -1,7 +1,7 @@
 <template>
     <div class="bg-grey" @click.self="toParent" v-if="!show">
         <mt-picker :slots="slots" @change="onValuesChange" value-key="value" showToolbar>
-            <mt-header title="选择公司名称">
+            <mt-header title="选择省市区">
                 <mt-button slot="left" class="cancle" @click="toParent">取消</mt-button> 
                 <mt-button slot="right" class="sure" @click="sure">确定</mt-button>                       
             </mt-header>   
@@ -32,17 +32,13 @@ export default {
                     className: 'slot2',
                     textAlign: 'center',
                     defaultIndex: 0                    
-                }, 
-                /*
-                {
+                }, {
                     flex: 1,
                     values: iosCountys,
                     className: 'slot3',
                     textAlign: 'right',
                     defaultIndex: 0                    
-                }
-                */
-                ]
+                }]
         }
     },
     props: ['show', 'province', 'city', 'county'],
@@ -66,15 +62,12 @@ export default {
                         countyArray.push(iosCountys[j]);
                     }
                 }
-                picker.setSlotValues(2, countyArray);  
+                picker.setSlotValues(2, countyArray);
             }
             var result = this.result;
-            //console.log("******",this.values)
-            //if(typeof(values[1]) == 'object' && typeof(values[2]) == 'object'){
-            if(typeof(values[1]) == 'object'){
-                //页面返回值
-                result = values[0].value + values[1].value;
-                //result = values[0].value + values[1].value + values[2].value;
+            
+            if(typeof(values[1]) == 'object' && typeof(values[2]) == 'object'){
+                result = values[0].value + values[1].value + values[2].value;
                 this.provinceValue = values[0].value;
                 this.cityValue = values[1].value;
                 this.countyValue = values[2].value;
@@ -103,8 +96,6 @@ export default {
                 this.countyValue = values[2].value;
             }
             this.result = result;
-            console.log("######",this.result);
-            console.log("######",this.provinceValue,"##",this.cityValue,"##",this.countyValue,"######");
         },
         // 传值
         toParent(){
@@ -141,7 +132,6 @@ export default {
 }
 </script>
 <style scoped>
-/*
     .bg-grey{
         background: rgba(0,0,0,.5);
         height: 100%;
@@ -166,8 +156,6 @@ export default {
     .sure{
         color: #0575f2;
     }
-*/
-    
 </style>
 
 
