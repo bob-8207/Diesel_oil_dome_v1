@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Login from '@/views/Login'
 import Register from '@/views/Register'
 import select from '@/components/select'
+import Home from '@/views/home'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/rg',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      component: Home
     }
   ]
 })
