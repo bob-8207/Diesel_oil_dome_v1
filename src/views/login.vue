@@ -3,6 +3,7 @@
         <h1>登录</h1>
         <mt-field label="用户名" placeholder="请输入用户名" type="text" v-model="login_id"></mt-field>
         <mt-field label="密码" placeholder="请输入密码" type="password" v-model="login_password"></mt-field>
+        <mt-field label=""></mt-field>
         <mt-button type="primary" @click="login">登录</mt-button><br/>
         <br/>
         <span v-on:click="go_register">没有账号？马上注册！</span>
@@ -49,7 +50,7 @@ export default{
             }else{
                 /*接口请求*/
                 
-                let url = 'http://3.210.79.252:5000/rs/check_user_infor/'+'_id/'+this.login_id+'/password/'+ md5(this.login_password);
+                let url = 'http://54.222.170.110:5000/rs/check_user_infor/'+'_id/'+this.login_id+'/password/'+ md5(this.login_password);
                 console.log("the valule of data", url);
                 var response_infor = "begining of response_infor";
                 //this.$http.get('http://3.210.79.252:5000/rs/check_user_infor/', data, {emulateJSON:true}).then(function(response_infor){

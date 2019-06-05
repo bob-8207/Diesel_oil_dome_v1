@@ -120,8 +120,8 @@ export default {
         var formData = JSON.stringify(data);
         console.log("the valule of data", data);
         var response_infor = "begining of response_infor";
-        this.$http.post('http://3.210.79.252:5000/rs/check_user_infor/', formData, {emulateJSON:true}).then(function(response_infor){
-            console.log("111111111111111111",response_infor.ok) 
+        this.$http.post('http://54.222.170.110:5000/rs/check_user_infor/', formData, {emulateJSON:true}).then(function(response_infor){
+            console.log(response_infor.ok) 
           if(response_infor.data.info == "create success."){
             alert("注册成功！")
             this.$router.push('/')
