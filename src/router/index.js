@@ -5,6 +5,7 @@ import Login from '@/views/Login'
 import Register from '@/views/Register'
 import select from '@/components/select'
 import Home from '@/views/home'
+import Updata from '@/views/updata'
 
 Vue.use(Router)
 
@@ -34,6 +35,12 @@ export default new Router({
       path: '/home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/updata',
+      name: 'Updata',
+      component: Updata
     }
+
   ]
 })

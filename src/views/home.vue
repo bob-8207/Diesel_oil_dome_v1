@@ -1,7 +1,12 @@
 <template>
     <div>
         <h3>欢迎 {{name}}</h3>
-        <a href="#" @click="quit">注销登录</a>
+
+    
+      
+        <mt-button type="primary" @click="updata_info">修改注册信息</mt-button><br/>
+        <br/>
+        <mt-button type="primary" @click="quit">注销登录</mt-button>
     </div>
 </template>
 
@@ -28,6 +33,9 @@ import { setCookie,getCookie,delCookie } from '../../src/assets/js/cookie.js'
                 /*删除cookie*/
                 delCookie('username')
                 this.$router.push('/')
+            },
+            updata_info(){
+                this.$router.push('/updata')
             }
         }
     }
